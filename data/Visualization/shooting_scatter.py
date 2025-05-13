@@ -609,10 +609,13 @@ def plot_shot_map(shooting_data, ax=None):
 
         # 文本位置微调
         dx = 0
+        dy = 0
         if name == "zone11":
-            dx = -7  # 向左偏移
+            dx = -9  # 向左偏移
         elif name == "zone13":
-            dx = 7   # 向右偏移
+            dx = 9   # 向右偏移
+        elif name == "zone14":
+            dy = -8
 
         total = zone_stats[name]['total']
         made = zone_stats[name]['made']
@@ -622,10 +625,10 @@ def plot_shot_map(shooting_data, ax=None):
             summary = f"{made}/{total}"
             text = f"{percentage}\n{summary}"
         else:
-            text = "No data"
+            text = "0%\n0/0"
 
         ax.text(
-            centroid.x + dx, centroid.y,
+            centroid.x + dx, centroid.y + dy,
             text,
             ha='center', va='center',
             fontsize=10, color='black', fontweight='bold'
