@@ -1,2 +1,1 @@
-# shotershub
 # basketball_analyzer
